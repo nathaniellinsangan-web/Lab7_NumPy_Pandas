@@ -1,0 +1,18 @@
+SENSITIVITY REPORT
+Selected features: ['f171', 'f228', 'f289', 'f300', 'f564']
+Bootstrap repetitions: 260 (stratified, seed 6)
+Difference = mean(Fail) - mean(Pass)
+
+Largest change in mean difference: f564 (0.116403)
+Features with changed sign: None
+Features with changed ranking: ['f300', 'f564']
+CI excludes zero (available-case): ['f300']
+CI excludes zero (median-imputed): ['f300']
+Reproducibility verified: Yes
+
+Interpretation: Median imputation fills missing values with the center of the
+data, which pulls group means toward the overall median and usually shrinks the
+Fail-Pass difference relative to available-case analysis. Features whose sign
+or ranking stay the same under both strategies, and whose 95% CI excludes zero
+in both, are the most robust. Features whose CI spans zero, or that change sign
+or rank, should not be used for engineering decisions without more data.
